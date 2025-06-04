@@ -3,4 +3,4 @@
 compile:
 	@docker build -t test .
 run:
-	@docker run -i test /app/run
+	@docker run -i test
