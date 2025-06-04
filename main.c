@@ -7,7 +7,12 @@
 
 int main() {
 
-    char *programs[] = {"Compute the first mersenne primes", "Compute the first primes", "Exit"};
+    char *programs[] = {
+        "Compute the first mersenne primes", 
+        "Compute the first primes",
+        "Exit"
+    };
+    
     int n = sizeof(programs) / sizeof(programs[0]);
     int numero = -1;
     int valido;
@@ -18,7 +23,7 @@ int main() {
         while (!valido) {
             printf("Select an option to run: \n\n");
             for (int i = 0; i < n; i++) {
-                printf(" - %d: %s.\n", i, programs[i]);
+                printf(" %d: %s.\n", i, programs[i]);
             }
             
             printf("\n> ");
@@ -26,7 +31,7 @@ int main() {
             if (scanf("%d", &numero) != 1) {
                 // Limpiar entrada inválida (como letras)
                 while (getchar() != '\n'); // Vacía el buffer
-                printf("Wrong option! Try again.\n");
+                printf("❌ Invalid option! Try again.\n\n");
                 fflush(stdout);
                 continue;
             }
@@ -34,12 +39,12 @@ int main() {
             if (numero >= 0 && numero < n) {
                 valido = 1;
             } else {
-                printf("\nWrong option! Try again.\n");
+                printf("\n❌ Invalid option! Try again.\n\n");
                 fflush(stdout);
             }
         }
 
-        printf("\nSelected: %d\n", numero);
+        printf("\n✅ Selected: %d\n", numero);
         
         if (numero == 0) {
             computeMersenne();
