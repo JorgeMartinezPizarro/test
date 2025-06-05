@@ -14,6 +14,6 @@ RUN mkdir ./lib
 COPY lib/* ./lib/.
 
 # Compilar el código C con GMP
-RUN gcc -O2 -I. -o run lib/*.c main.c -lgmp -lpthread
+RUN gcc -O3 -I. -o run lib/*.c main.c -lgmp -lpthread
 
 CMD ./run

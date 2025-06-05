@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include "lib/eratostenes.h"
 #include "lib/mersenne.h"
 
 
 int main() {
 
     char *programs[] = {
-        "Compute the first mersenne primes", 
-        "Compute the first primes",
+        "Run the Lucas Lehmer Test", 
+        "Run the Eratosthenes Sieve",
         "Exit"
     };
     
@@ -49,7 +49,7 @@ int main() {
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            printf("\nThe first primes are: 2, 3, 5, 7, 11, 13 ...\n");
+            printPrimes(1000000000);
         } else if (numero == 2) {
             puts("\nExiting ...");
         } else {
