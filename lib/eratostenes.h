@@ -1,1 +1,1 @@
-int *sieve(int n);
+void printPrimes(int n);

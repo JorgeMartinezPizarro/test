@@ -70,7 +70,7 @@ void computeMersenne() {
     int COUNT = sizeof(numbers) / sizeof(numbers[0]);
 
 
-    printf("\n\nValidating first %d mersenne primes\n", COUNT);
+    printf("\nValidating first %d mersenne primes\n\n", COUNT);
     double start = now();
 
     sem_init(&sem, 0, 20); // inicializar semáforo
