@@ -6,7 +6,7 @@ A simple `C` project using `docker` and `Makefile` created to practice.
 
 ### Usage
 
-- `make compile` to compile the image
-- `make run` to run the last image built
-- `make compile run` to run and compile.
+- `make compile`: compile the image.
+- `make run`: execute the last image built.
+- `make compile run`: compile and execute.
 
