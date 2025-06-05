@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "tools.h"
+
 
 int raiz_cuadrada_entera(int n) {
     if (n < 0) return -1; // raíz cuadrada no definida para negativos
@@ -30,15 +32,12 @@ int *sieve(int n) {
 
     is_prime[0] = false; // n = 1 (or i = 0 in the array) is not prime!
     
-    printf("Initializing array of length %d", n);
-    fflush(stdout);
-    
     for (int i = 1; i < n; i++) {
         is_prime[i] = true; // start position true, is prime
     }
 
-    puts("\n");
     printf("Sieving 0%%");
+    fflush(stdout);
     for (int i = 1; i < limit; i++) { // we mark every multiple of i as composite, false
         if (is_prime[i]) {
             printf("\rSieving %d%%", 100 * i / (limit));
@@ -50,6 +49,7 @@ int *sieve(int n) {
     }
 
     puts("\rSieving 100%%\n");
+    fflush(stdout);
     
     int number_of_primes = 0;
     for (int i = 0; i < n; i++) {
@@ -70,22 +70,27 @@ int *sieve(int n) {
         x++;
     }
 
-    printf("There are %d primes smaller than %d.\n", number_of_primes, n);
+    printf("There are %d primes smaller than %d.\n\n", number_of_primes, n);
+    fflush(stdout);
 
     
     return lista;
 }
 
-void printPrimes(int n) {
+void computeEratosthenes(int n) {
     
     puts("");
+    double n0 = now();
     int* primes = sieve(n);
     
     int COUNT = primes[0];
-    printf("The last primes up to %d are: \n", COUNT, n);
     
     for (int i = 0; i < 10; i++) {
-        printf("%d ", primes[COUNT - i]);
+        printf("✅ %d is prime!\n", primes[COUNT - i]);
+        fflush(stdout);
     }
-    printf("\n");
+
+    double n1 = now();
+
+    printf("\nIt took %.2fs.\n", n1 - n0);
 }

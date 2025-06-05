@@ -1,19 +1,13 @@
 #include <gmp.h>
 #include <stdbool.h>
 #include <pthread.h>
-#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <semaphore.h>
+#include "tools.h"
 
 sem_t sem;
 
-// Medición de tiempo simple
-double now() {
-    struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    return ts.tv_sec + ts.tv_nsec / 1e9;
-}
 
 // Test de Lucas-Lehmer optimizado
 bool isMersennePrime(long p) {
@@ -49,10 +43,10 @@ void* thread_runner(void* arg) {
     double t0 = now();
     if (isMersennePrime(p)) {
         double t1 = now();
-        printf("✔  2^%ld - 1 is prime! (%.2f s)\n", p, t1 - t0);
+        printf("✅ 2^%ld - 1 is prime! (%.2f s)\n", p, t1 - t0);
     } else {
         double t1 = now();
-        printf("✘  2^%ld - 1 is composite. (%.2f s)\n", p, t1 - t0);
+        printf("❌ 2^%ld - 1 is composite. (%.2f s)\n", p, t1 - t0);
     }
 
     fflush(stdout);
@@ -89,7 +83,7 @@ void computeMersenne() {
     sem_destroy(&sem); // destruir semáforo
 
     double end = now();
-    printf("\nAll tests completed in %.2f seconds.\n", end - start);
+    printf("\nIt took %.2fs.\n", end - start);
 
     return;
 }

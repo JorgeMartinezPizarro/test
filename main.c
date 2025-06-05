@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
 #include "lib/eratostenes.h"
 #include "lib/mersenne.h"
 
@@ -21,6 +22,13 @@ int main() {
         valido = 0;
         numero = -1;
         while (!valido) {
+            printf("/////////////////////////////////////////////////////////////////////////////////////////////////\n");
+            printf("   __  __    _    _____ _   _ \n");
+            printf("  |  \\/  |  / \\  |_   _| | | |\n");
+            printf("  | |\\/| | / _ \\   | | | |_| |\n");
+            printf("  | |  | |/ ___ \\  | | |  _  |\n");
+            printf("  |_|  |_/_/   \\_\\ |_| |_| |_|\n");
+            printf("\n");
             printf("Select an option to run: \n\n");
             for (int i = 0; i < n; i++) {
                 printf(" %d: %s.\n", i, programs[i]);
@@ -49,8 +57,8 @@ int main() {
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            printPrimes(1000000000);
-        } else if (numero == 2) {
+            computeEratosthenes(200000000);
+        } else if (numero == n - 1) {
             puts("\nExiting ...");
         } else {
             puts("\nNothing to do ...");
