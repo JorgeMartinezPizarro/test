@@ -4,6 +4,7 @@
 
 #include "lib/eratostenes.h"
 #include "lib/mersenne.h"
+#include "lib/test.h"
 
 
 int main() {
@@ -11,6 +12,7 @@ int main() {
     char *programs[] = {
         "Run the Lucas Lehmer Test", 
         "Run the Eratosthenes Sieve",
+        "Do Things",
         "Exit"
     };
     
@@ -57,7 +59,9 @@ int main() {
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            computeEratosthenes(200000000);
+            computeEratosthenes(100000000);
+        } else if (numero == 2) {
+            doThings();
         } else if (numero == n - 1) {
             puts("\nExiting ...");
         } else {
