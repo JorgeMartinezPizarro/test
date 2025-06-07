@@ -10,9 +10,9 @@
 int main() {
 
     char *programs[] = {
-        "Run the Lucas Lehmer Test", 
-        "Run the Eratosthenes Sieve",
-        "Do Things",
+        "The Lucas Lehmer Test", 
+        "The Eratosthenes Sieve",
+        "String and char functions",
         "Exit"
     };
     
@@ -24,7 +24,7 @@ int main() {
         valido = 0;
         numero = -1;
         while (!valido) {
-            printf("/////////////////////////////////////////////////////////////////////////////////////////////////\n");
+            printf("//////////////////////////////////////////////////////////////////////////////////////////////\n");
             printf("   __  __    _    _____ _   _ \n");
             printf("  |  \\/  |  / \\  |_   _| | | |\n");
             printf("  | |\\/| | / _ \\   | | | |_| |\n");
