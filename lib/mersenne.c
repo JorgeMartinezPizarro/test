@@ -8,7 +8,6 @@
 
 sem_t sem;
 
-
 // Test de Lucas-Lehmer optimizado
 bool isMersennePrime(long p) {
     if (p == 2) return true;
@@ -87,3 +86,4 @@ void computeMersenne() {
 
     return;
 }
+

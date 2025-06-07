@@ -1,21 +1,6 @@
 #include <stdio.h>
 #include "tools.h"
 
-void doThings() {
-    puts("");
-
-    char* emojis = "😀🎉🌟🔥🚀🍕🎵🐱‍👤🌈🍀🦄🍩🎨🐉🌸⚡️🐢🍎💡🎬🎧🛸🎁🎲🚴";
-
-    splitString(emojis);
-
-    char* jorge = "Luis Martínez Núñez";
-
-    splitString(jorge);
-
-    putchar('\n');
-    return;
-}
-
 void splitString(char* emojis) {
     // Imprimir string completo
     fputs("Split ", stdout);
@@ -85,5 +70,22 @@ void splitString(char* emojis) {
         i += len;
     }
 
+    return;
+}
+
+void exploreStrings() {
+    puts("");
+
+    char* emojis = "😀🎉🌟🔥🚀🍕🎵🐱‍👤🌈🍀🦄🍩🎨🐉🌸⚡️🐢🍎💡🎬🎧🛸🎁🎲🚴";
+
+    splitString(emojis);
+
+    char* jorge = "Martínez";
+
+    putchar('\n');
+
+    splitString(jorge);
+
+    putchar('\n');
     return;
 }
