@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "tools.h"
 
 void doThings() {
     puts("");
@@ -6,10 +7,12 @@ void doThings() {
     char* emojis = "😀🎉🌟🔥🚀🍕🎵🐱‍👤🌈🍀🦄🍩🎨🐉🌸⚡️🐢🍎💡🎬🎧🛸🎁🎲🚴";
 
     // Imprimir string completo
-    printf("Split %s into utf8 characters:\n", emojis);
+    fputs("Split ", stdout);
+    fputs(emojis, stdout);
+    puts(" into chars:\n");
 
     int i = 0;
-
+    int count = 0;
     while (emojis[i] != '\0') {
         unsigned char byte = emojis[i];
         int len = 0;
@@ -53,15 +56,23 @@ void doThings() {
         // Si sí, sumamos esos 3 bytes para imprimirlos juntos
         len = len + next_len;
 
+        fputs("✅ Char nr. ", stdout);
+        char es[2];
+        itoc(++count, es);
+        fputs(es, stdout);
+        fputs(" ", stdout);
         for (int j = 0; j < len; j++) {
             putchar((unsigned char)emojis[i + j]);
         }
 
-        puts("");
-        
+        fputs(" with length ", stdout);
+        char it[2];
+        itoc(len, it);
+        fputs(it, stdout);
+        putchar('\n');
         i += len;
     }
 
-    puts("");
+    putchar('\n');
     return;
 }
