@@ -6,6 +6,17 @@ void doThings() {
 
     char* emojis = "😀🎉🌟🔥🚀🍕🎵🐱‍👤🌈🍀🦄🍩🎨🐉🌸⚡️🐢🍎💡🎬🎧🛸🎁🎲🚴";
 
+    splitString(emojis);
+
+    char* jorge = "Luis Martínez Núñez";
+
+    splitString(jorge);
+
+    putchar('\n');
+    return;
+}
+
+void splitString(char* emojis) {
     // Imprimir string completo
     fputs("Split ", stdout);
     fputs(emojis, stdout);
@@ -70,9 +81,9 @@ void doThings() {
         itoc(len, it);
         fputs(it, stdout);
         putchar('\n');
+        
         i += len;
     }
 
-    putchar('\n');
     return;
 }
