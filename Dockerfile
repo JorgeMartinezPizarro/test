@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 
 # Instalar dependencias del sistema
 RUN apt-get update && \

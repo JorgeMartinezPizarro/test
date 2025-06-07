@@ -3,6 +3,6 @@
 #define ERATOSTHENES_H
 
 // Perform a eratosthenes sieve up to n and print the primes found.
-void computeEratosthenes(int n);
+void computeEratosthenes(long n);
 
 #endif

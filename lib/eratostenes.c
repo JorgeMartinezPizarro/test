@@ -4,13 +4,13 @@
 #include "tools.h"
 
 
-int raiz_cuadrada_entera(int n) {
+long raiz_cuadrada_entera(long n) {
     if (n < 0) return -1; // raíz cuadrada no definida para negativos
 
-    int izquierda = 0, derecha = n, resultado = 0;
+    long izquierda = 0, derecha = n, resultado = 0;
 
     while (izquierda <= derecha) {
-        int medio = izquierda + (derecha - izquierda) / 2;
+        long medio = izquierda + (derecha - izquierda) / 2;
         if ((long long)medio * medio <= n) {
             resultado = medio;
             izquierda = medio + 1;
@@ -23,10 +23,10 @@ int raiz_cuadrada_entera(int n) {
 }
 
 // El primer valor del puntero indica la cantidad de elementos
-int *sieve(int n) {
-    int *lista;
+long *sieve(long n) {
+    long *lista;
     
-    int limit = raiz_cuadrada_entera(n);
+    long limit = raiz_cuadrada_entera(n);
 
     bool *is_prime = malloc(n * sizeof(bool));
 
@@ -38,11 +38,11 @@ int *sieve(int n) {
 
     printf("Sieving 0%%");
     fflush(stdout);
-    for (int i = 1; i < limit; i++) { // we mark every multiple of i as composite, false
+    for (long i = 1; i < limit; i++) { // we mark every multiple of i as composite, false
         if (is_prime[i]) {
-            printf("\rSieving %d%%", 100 * i / (limit));
+            printf("\rSieving %ld%%", 100 * i / (limit));
             fflush(stdout);
-            for (int j = 2 * i + 1; j < n; j = j + i + 1) {
+            for (long j = 2 * i + 1; j < n; j = j + i + 1) {
                 is_prime[j] = false;
             }
         }
@@ -51,7 +51,7 @@ int *sieve(int n) {
     puts("\rSieving 100%%\n");
     fflush(stdout);
     
-    int number_of_primes = 0;
+    long number_of_primes = 0;
     for (int i = 0; i < n; i++) {
         if (is_prime[i]) {
             number_of_primes++;
@@ -70,23 +70,23 @@ int *sieve(int n) {
         x++;
     }
 
-    printf("There are %d primes smaller than %d.\n\n", number_of_primes, n);
+    printf("There are %ld primes smaller than %ld.\n\n", number_of_primes, n);
     fflush(stdout);
 
     
     return lista;
 }
 
-void computeEratosthenes(int n) {
+void computeEratosthenes(long n) {
     
     puts("");
     double n0 = now();
-    int* primes = sieve(n);
+    long* primes = sieve(n);
     
-    int COUNT = primes[0];
+    long COUNT = primes[0];
     
-    for (int i = 0; i < 10; i++) {
-        printf("✅ %d is prime!\n", primes[COUNT - i]);
+    for (int i = 9; i >= 0; i--) {
+        printf("✅ %ld is prime!\n", primes[COUNT - i]);
         fflush(stdout);
     }
 

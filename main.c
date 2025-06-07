@@ -24,7 +24,7 @@ int main() {
         valido = 0;
         numero = -1;
         while (!valido) {
-            printf("//////////////////////////////////////////////////////////////////////////////////////////////\n");
+            printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
             printf("   __  __    _    _____ _   _ \n");
             printf("  |  \\/  |  / \\  |_   _| | | |\n");
             printf("  | |\\/| | / _ \\   | | | |_| |\n");
@@ -55,11 +55,12 @@ int main() {
         }
 
         printf("\n✅ Selected: %d\n", numero);
+        fflush(stdout);
         
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            computeEratosthenes(100000000);
+            computeEratosthenes(5000000000);
         } else if (numero == 2) {
             exploreStrings();
         } else if (numero == n - 1) {
