@@ -86,6 +86,5 @@ void exploreStrings() {
 
     splitString(jorge);
 
-    putchar('\n');
     return;
 }

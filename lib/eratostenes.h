@@ -4,5 +4,5 @@
 
 // Perform a eratosthenes sieve up to n and print the primes found.
 void computeEratosthenes(long n);
-
+void computeSegmentedEratosthenes();
 #endif

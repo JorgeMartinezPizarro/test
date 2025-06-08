@@ -12,6 +12,7 @@ int main() {
     char *programs[] = {
         "The Lucas Lehmer Test", 
         "The Eratosthenes Sieve",
+        "The Segmented Sieve",
         "Test String and Chars",
         "Exit"
     };
@@ -60,8 +61,10 @@ int main() {
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            computeEratosthenes(5000000000);
+            computeEratosthenes(10000000000);
         } else if (numero == 2) {
+            computeSegmentedEratosthenes();
+        } else if (numero == 3) {
             exploreStrings();
         } else if (numero == n - 1) {
             puts("\nExiting ...");
