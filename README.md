@@ -1,6 +1,6 @@
 ### Abstract
 
-A simple `C` project using `docker` and `Makefile` created to practice.
+A simple `C` project using `docker` and `Makefile` created to get in use with `C`.
 
 !["Math image"](image.png)
 
