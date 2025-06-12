@@ -226,6 +226,6 @@ void computeSegmentedEratosthenes() {
     // 5. Destruir mutex (opcional si vas a reusarlo)
     pthread_mutex_destroy(&lock);
 
-    printf("Found %lld primes up to %lld\n", total_primes, N);
+    printf("\n\nThere are %lld primes smaller than %lld\n", total_primes, N);
     printf("\nIt took %.2fs.\n", now() - t0);
 }

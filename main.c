@@ -13,12 +13,13 @@
 int main() {
 
     char *programs[] = {
-        "Check Mersenne Primes with Lucas Lehmer Test", 
-        "Count primes with eratosthenes sieve",
-        "Count primes with segmented sieve",
-        "Split strings by chars",
-        "Combinations of N elements by M at a time",
-        "Run some basic C functions",
+        "Say Hello World!",
+        "Find Mersenne primes smallers than 10E7000 using LLT", 
+        "Count primes smallers than 10E9 with the Eratosthenes sieve",
+        "Count primes smallers than 10E9 with the segmented sieve",
+        "Split strings by multi-byte characters",
+        "Integers and Combinations",
+        "Pointers and values",
         "Exit"
     };
     
@@ -37,7 +38,7 @@ int main() {
             printf("  | |  | |/ ___ \\  | | |  _  |\n");
             printf("  |_|  |_/_/   \\_\\ |_| |_| |_|\n");
             printf("\n");
-            printf("Select an option to run: \n\n");
+            printf("Hi human! What can I do for you?\n\n");
             for (int i = 0; i < n; i++) {
                 printf(" %d: %s.\n", i, programs[i]);
             }
@@ -64,14 +65,16 @@ int main() {
         fflush(stdout);
         
         if (numero == 0) {
-            computeMersenne();
+            helloWorld();
         } else if (numero == 1) {
-            computeEratosthenes(1000000000);
+            computeMersenne();
         } else if (numero == 2) {
-            computeSegmentedEratosthenes();
+            computeEratosthenes(1000000000);
         } else if (numero == 3) {
-            exploreStrings();
+            computeSegmentedEratosthenes();
         } else if (numero == 4) {
+            exploreStrings();
+        } else if (numero == 5) {
             
             for (int n = 1; n <= 9; n++) {
                 printf("\n\n - Permutations of 10 taken %d by a time:\n\n", n);
@@ -82,7 +85,7 @@ int main() {
             puts("  ");
             fflush(stdout);
             
-        } else if (numero == 5) {
+        } else if (numero == 6) {
             runTests();
         } else if (numero == n - 1) {
             puts("\nExiting ...");

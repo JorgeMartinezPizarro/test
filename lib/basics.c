@@ -2,7 +2,7 @@
 #include "tools.h"
 
 void helloWorld(void) {
-    puts("HelloWorld");
+    puts("\nHello World!");
 }
 
 void usingPointers() {
