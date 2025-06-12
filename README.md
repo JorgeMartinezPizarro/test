@@ -1,12 +1,24 @@
-### Abstract
+### 🔍 Abstract
 
 A simple `C` project using `docker` and `Makefile` created to get in use with `C`.
 
 !["Math image"](image.png)
 
-### Usage
+### ⚙️ Usage
 
-- `make compile`: compile the image.
-- `make run`: execute the last image built.
-- `make compile run`: compile and execute.
+## 🛠️ Compile
+
+Compile the project as a runnable docker image
+
+```
+    make compile
+```
+## ▶️ Run
+
+Run the last built docker image.
+
+```
+    make run
+```
+
 
