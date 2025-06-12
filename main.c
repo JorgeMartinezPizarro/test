@@ -20,7 +20,7 @@ int main() {
         "Split strings by multi-byte characters",
         "Integers and Combinations",
         "Pointers and values",
-        "Exit"
+        "Close and Exit"
     };
     
     int n = sizeof(programs) / sizeof(programs[0]);
@@ -32,13 +32,13 @@ int main() {
         numero = -1;
         while (!valido) {
             printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
-            printf("   __  __    _    _____ _   _ \n");
-            printf("  |  \\/  |  / \\  |_   _| | | |\n");
-            printf("  | |\\/| | / _ \\   | | | |_| |\n");
-            printf("  | |  | |/ ___ \\  | | |  _  |\n");
-            printf("  |_|  |_/_/   \\_\\ |_| |_| |_|\n");
+            printf("        __  __    _    _____ _   _ \n");
+            printf("       |  \\/  |  / \\  |_   _| | | |\n");
+            printf("       | |\\/| | / _ \\   | | | |_| |\n");
+            printf("       | |  | |/ ___ \\  | | |  _  |\n");
+            printf("       |_|  |_/_/   \\_\\ |_| |_| |_|\n");
             printf("\n");
-            printf("Hi human! What can I do for you?\n\n");
+            printf("Hi human! What can I do... for ya?\n\n");
             for (int i = 0; i < n; i++) {
                 printf(" %d: %s.\n", i, programs[i]);
             }
