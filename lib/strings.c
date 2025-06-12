@@ -65,6 +65,7 @@ void splitString(char* emojis) {
         char it[2];
         itoc(len, it);
         fputs(it, stdout);
+        fputs(" bytes", stdout);
         putchar('\n');
         
         i += len;

@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
 
 #include "lib/eratostenes.h"
 #include "lib/mersenne.h"
-#include "lib/test.h"
+#include "lib/strings.h"
+#include "lib/integers.h"
 
 
 int main() {
 
     char *programs[] = {
-        "The Lucas Lehmer Test", 
-        "The Eratosthenes Sieve",
-        "The Segmented Sieve",
-        "Test String and Chars",
+        "Check Mersenne Primes with Lucas Lehmer Test", 
+        "Count primes with eratosthenes sieve",
+        "Count primes with segmented sieve",
+        "Split strings by chars",
+        "Combinations of N elements by M at a time",
         "Exit"
     };
     
@@ -55,22 +58,34 @@ int main() {
             }
         }
 
-        printf("\n✅ Selected: %d\n", numero);
+        printf("\n✅ Selected: %d - %s\n", numero, programs[numero]);
         fflush(stdout);
         
         if (numero == 0) {
             computeMersenne();
         } else if (numero == 1) {
-            computeEratosthenes(10000000000);
+            computeEratosthenes(1000000000);
         } else if (numero == 2) {
             computeSegmentedEratosthenes();
         } else if (numero == 3) {
             exploreStrings();
+        } else if (numero == 4) {
+            
+            for (int n = 2; n <= 9; n++) {
+                printf("\n\n - Permutations of 10 taken %d by a time:\n\n", n);
+                fflush(stdout);
+                print_combinations(n);
+            }
+
+            puts("  ");
+            fflush(stdout);
+            
         } else if (numero == n - 1) {
             puts("\nExiting ...");
         } else {
             puts("\nNothing to do ...");
         }
+        
         puts("");
     }
     return 0;

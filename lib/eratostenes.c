@@ -58,18 +58,6 @@ long sieve(long n) {
         }
     }
 
-    /*lista = malloc(number_of_primes * sizeof(int));
-    int x = 0;
-    int k = 1;
-    lista[0] = number_of_primes;
-    while (x < n) {
-        if (is_prime[x]) {
-            lista[k] = x+1;
-            k++;
-        }
-        x++;
-    }*/
-
     printf("There are %ld primes smaller than %ld.\n\n", number_of_primes, n);
     fflush(stdout);
 
@@ -185,8 +173,8 @@ void computeSegmentedEratosthenes() {
     total_primes = 0;
     base_prime_count = 0;
     sqrtN = 0;
-    N = 1000000000000ULL; // 1 trillion
-    block_size = 100000000ULL;  // 100 million
+    N = 1000000000ULL; // 1 billion
+    block_size = 1000000ULL;  // 1 million
 
     // 2. Inicializar mutex
     pthread_mutex_init(&lock, NULL);
