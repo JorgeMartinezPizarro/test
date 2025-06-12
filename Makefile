@@ -1,12 +1,15 @@
-.PHONY: compile run
+.PHONY: compile run stop
 
-NAME=c_test_image
+NAME = c_test_image
+IMAGE = test
 
 compile:
-	@docker build -t test .
-run:
-	-@make stop --no-print-director
-	-@docker run --name ${NAME} -i test
+	@docker build -t $(IMAGE) .
+
+run: compile
+	-@$(MAKE) stop --no-print-directory
+	-@docker run --name $(NAME) -i $(IMAGE)
+
 stop:
-	-@docker kill ${NAME}  > /dev/null 2>&1 || true
-	-@docker rm ${NAME}  > /dev/null 2>&1 || true
+	-@docker kill $(NAME) > /dev/null 2>&1 || true
+	-@docker rm $(NAME) > /dev/null 2>&1 || true

@@ -7,6 +7,7 @@
 #include "lib/mersenne.h"
 #include "lib/strings.h"
 #include "lib/integers.h"
+#include "lib/basics.h"
 
 
 int main() {
@@ -17,6 +18,7 @@ int main() {
         "Count primes with segmented sieve",
         "Split strings by chars",
         "Combinations of N elements by M at a time",
+        "Run some basic C functions",
         "Exit"
     };
     
@@ -80,6 +82,8 @@ int main() {
             puts("  ");
             fflush(stdout);
             
+        } else if (numero == 5) {
+            runTests();
         } else if (numero == n - 1) {
             puts("\nExiting ...");
         } else {

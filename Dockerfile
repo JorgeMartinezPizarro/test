@@ -1,19 +1,22 @@
-FROM ubuntu:24.04
+# Etapa de build (compilación)
+FROM ubuntu:24.04 as builder
 
-# Instalar dependencias del sistema
 RUN apt-get update && \
     apt-get install -y gcc libgmp-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Crear directorio de trabajo
 WORKDIR /app
-
-# Copiar archivos
+COPY lib/ lib/
 COPY main.c .
-RUN mkdir ./lib
-COPY lib/* ./lib/.
 
-# Compilar el código C con GMP
-RUN gcc -g -Wall -Wextra -Werror -O3 -I. -o run lib/*.c main.c -lgmp -lpthread -lm
+# Compilación estática
+RUN gcc -static -O3 -Wall -Wextra -Werror -o myapp main.c lib/*.c -lgmp -lpthread -lm
 
-CMD ./run
+# Etapa final (runtime)
+FROM alpine:latest
+
+# Copiamos solo el binario
+COPY --from=builder /app/myapp /bin/myapp
+
+# Ejecutamos el binario
+ENTRYPOINT ["/bin/myapp"]
