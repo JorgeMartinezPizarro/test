@@ -71,7 +71,7 @@ int main() {
             exploreStrings();
         } else if (numero == 4) {
             
-            for (int n = 2; n <= 9; n++) {
+            for (int n = 1; n <= 9; n++) {
                 printf("\n\n - Permutations of 10 taken %d by a time:\n\n", n);
                 fflush(stdout);
                 print_combinations(n);
