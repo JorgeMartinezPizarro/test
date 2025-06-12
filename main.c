@@ -76,8 +76,8 @@ int main() {
             exploreStrings();
         } else if (numero == 5) {
             
-            for (int n = 1; n <= 9; n++) {
-                printf("\n\n - Permutations of 10 taken %d by a time:\n\n", n);
+            for (int n = 1; n <= 10; n++) {
+                printf("\n\n - The %d! / (%d! * (%d - %d)!) subsets of the 10-digits set taken %d by a time:\n\n", 10, n, 10, n , n);
                 fflush(stdout);
                 print_combinations(n);
             }
